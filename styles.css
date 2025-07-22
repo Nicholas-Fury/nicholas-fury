@@ -29,7 +29,7 @@ html {
 }
 
 body {
-    font-family: 'Inter', sans-serif;
+    font-family: 'Open Sans', 'Inter', Arial, sans-serif;
     line-height: 1.7;
     color: var(--dark-color);
     background: var(--light-color);
@@ -314,7 +314,7 @@ nav {
 /* Page Header */
 .page-header {
     background: linear-gradient(135deg, rgba(243, 244, 246, 0.8) 0%, rgba(227, 232, 240, 0.8) 100%);
-    padding: 10rem 0 4rem;
+    padding: 12rem 0 4rem;
     text-align: center;
 }
 
@@ -345,6 +345,7 @@ nav {
 
 .about-content p {
     margin-bottom: 1.5rem;
+    font-size: 1.2rem;
 }
 
 .about-principles {
@@ -378,6 +379,11 @@ nav {
 
 .principle-card h3 {
     margin-bottom: 1rem;
+}
+
+.principle-card p {
+    font-size: 1rem;
+    color: var(--dark-color);
 }
 
 /* Resume Page */
@@ -532,7 +538,7 @@ nav {
     font-weight: 500;
 }
 
-.form-group input, 
+.form-group input,
 .form-group textarea {
     width: 100%;
     padding: 0.8rem;
@@ -589,15 +595,15 @@ footer {
     .container {
         width: var(--container-width-md);
     }
-    
+
     h1 {
         font-size: 2.8rem;
     }
-    
+
     h2 {
         font-size: 2rem;
     }
-    
+
     .hero .container,
     .featured .container,
     .about-story .container,
@@ -605,25 +611,25 @@ footer {
         grid-template-columns: 1fr;
         gap: 3rem;
     }
-    
+
     .hero-image,
     .about-image {
         display: none;
     }
-    
+
     .hero-content,
     .featured-content {
         text-align: center;
     }
-    
+
     .hero-content p {
         max-width: 100%;
     }
-    
+
     .hero-buttons {
         justify-content: center;
     }
-    
+
     .resume-contact {
         flex-direction: column;
         gap: 0.5rem;
@@ -634,39 +640,39 @@ footer {
     .nav-links {
         display: none;
     }
-    
+
     .menu-toggle {
         display: block;
     }
-    
+
     section {
         padding: 4rem 0;
     }
-    
+
     h1 {
         font-size: 2.2rem;
     }
-    
+
     h2 {
         font-size: 1.8rem;
     }
-    
+
     .hero {
         padding: 8rem 0 4rem;
     }
-    
+
     .page-header {
         padding: 8rem 0 3rem;
     }
-    
+
     .experience-header {
         flex-direction: column;
     }
-    
+
     .duration {
         margin-top: 0.3rem;
     }
-    
+
     .footer-content {
         flex-direction: column;
         text-align: center;
