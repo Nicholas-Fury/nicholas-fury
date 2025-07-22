@@ -15,28 +15,13 @@
     </style>
 </head>
 <body>
-    <nav>
-        <div class="container nav-container">
-            <a href="index.html" class="logo">Nicholas Batson</a>
-            <div class="nav-links">
-                <a href="index.html">Home</a>
-                <a href="about.html">About</a>
-                <a href="resume.html" class="active">Resume</a>
-                <a href="contact.html">Contact</a>
-            </div>
-            <div class="menu-toggle">
-                <i class="fas fa-bars"></i>
-            </div>
-        </div>
-    </nav>
-
+    <div id="header"></div>
     <header class="page-header">
         <div class="container">
             <h1>Resume</h1>
             <p>Business impact and professional experience</p>
         </div>
     </header>
-
     <section class="resume-section">
         <div class="container">
             <div class="resume-header">
@@ -171,26 +156,11 @@
             </div>
         </div>
     </section>
-
-    <footer>
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-logo">
-                    <h3>Nicholas Batson</h3>
-                    <p>Senior Technical Program Manager</p>
-                </div>
-                <div class="footer-links">
-                    <a href="https://github.com/Nicholas-Fury" target="_blank"><i class="fab fa-github"></i></a>
-                    <a href="https://www.linkedin.com/in/nicholasfurybatson" target="_blank"><i class="fab fa-linkedin"></i></a>
-                    <a href="mailto:nicholas@batson.xyz"><i class="fas fa-envelope"></i></a>
-                </div>
-            </div>
-            <div class="footer-bottom">
-                <p>&copy; 2025 Nicholas Fury Batson. All rights reserved.</p>
-            </div>
-        </div>
-    </footer>
-
+    <div id="footer"></div>
     <script src="script.js"></script>
+    <script>
+      fetch('header.html').then(res => res.text()).then(data => document.getElementById('header').innerHTML = data);
+      fetch('footer.html').then(res => res.text()).then(data => document.getElementById('footer').innerHTML = data);
+    </script>
 </body>
 </html>
