@@ -388,7 +388,12 @@ nav {
 
 /* Resume Page */
 .resume-section {
-    padding: 5rem 0;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    padding: 3rem 0 4rem 0;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 24px rgba(67, 97, 238, 0.07);
 }
 
 .resume-header {
@@ -413,6 +418,9 @@ nav {
     display: flex;
     align-items: center;
     gap: 0.5rem;
+    margin-bottom: 0.5rem;
+    font-size: 1.1rem;
+    font-weight: 500;
 }
 
 .resume-summary, .resume-experience, .resume-skills, .resume-education {
@@ -421,13 +429,15 @@ nav {
 
 .experience-item {
     margin-bottom: 2.5rem;
+    border-left: 3px solid var(--primary-color);
+    padding-left: 1.5rem;
+    background: #f8f9fa;
+    border-radius: 6px;
+    box-shadow: 0 2px 8px rgba(67, 97, 238, 0.04);
 }
 
 .experience-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    margin-bottom: 1rem;
+    margin-bottom: 0.5rem;
 }
 
 .experience-title h4 {
@@ -458,10 +468,18 @@ nav {
 .experience-section ul {
     list-style: disc;
     margin-left: 1.5rem;
+    margin-bottom: 0.8rem;
+    line-height: 1.7;
 }
 
 .experience-section li {
     margin-bottom: 0.5rem;
+    font-size: 1.05rem;
+}
+
+.experience-section li strong {
+    color: var(--accent-color);
+    font-weight: 700;
 }
 
 .skills-grid {
@@ -487,6 +505,21 @@ nav {
 .resume-cta {
     text-align: center;
     margin-top: 3rem;
+}
+
+.resume-cta .btn {
+    font-size: 1.2rem;
+    padding: 1rem 2.5rem;
+    background: var(--accent-color);
+    color: #fff;
+    border: none;
+    margin-top: 2rem;
+    box-shadow: 0 2px 8px rgba(67, 97, 238, 0.08);
+}
+
+.resume-cta .btn:hover {
+    background: var(--primary-dark);
+    color: #fff;
 }
 
 /* Contact Page */
@@ -678,5 +711,17 @@ footer {
         flex-direction: column;
         text-align: center;
         gap: 2rem;
+    }
+
+    .resume-section {
+        padding: 1.5rem 0.5rem 2rem 0.5rem;
+    }
+
+    .experience-item {
+        padding-left: 0.7rem;
+    }
+
+    .resume-section h3 {
+        font-size: 1.3rem;
     }
 }
