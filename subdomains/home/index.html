@@ -20,7 +20,69 @@
 </head>
 <body>
     <div id="header"></div>
-    <!-- ...existing index.html content, unchanged except for resource paths... -->
+    <header class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Nicholas Fury Batson</h1>
+                <p>Transforming organizational friction into scalable frameworks that empower teams and drive business outcomes.</p>
+                <div class="hero-buttons">
+                    <a href="/subdomains/nicholas/" class="btn primary">My Story</a>
+                    <a href="/subdomains/resume/" class="btn secondary">View Resume</a>
+                </div>
+            </div>
+            <div class="hero-image">
+                <div class="image-container">
+                    <!-- Profile picture from the resources folder -->
+                    <img src="/resources/me.jpeg" alt="Nicholas Batson">
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <section class="highlights">
+        <div class="container">
+            <h2>Making an Impact</h2>
+            <div class="highlights-grid">
+                <div class="highlight-card">
+                    <i class="fas fa-cogs"></i>
+                    <h3>Operational Transformation</h3>
+                    <p>Reduced processes from weeks to hours, saving thousands of work hours through strategic automation and system redesign.</p>
+                </div>
+                <div class="highlight-card">
+                    <i class="fas fa-lightbulb"></i>
+                    <h3>Strategic Leadership</h3>
+                    <p>Founded programs that became foundational to how teams operate, driving cross-organizational alignment and execution.</p>
+                </div>
+                <div class="highlight-card">
+                    <i class="fas fa-robot"></i>
+                    <h3>AI Integration</h3>
+                    <p>Pioneered AI-enhanced workflows that achieved 99% time savings while improving quality and strategic decision-making.</p>
+                </div>
+                <div class="highlight-card">
+                    <i class="fas fa-users"></i>
+                    <h3>Team Enablement</h3>
+                    <p>Created scalable frameworks that empower others to achieve more with less effort, fostering environments where continuous improvement thrives.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="featured">
+        <div class="container">
+            <div class="featured-content">
+                <h2>Curiosity-Driven Leadership</h2>
+                <p>From taking apart toys as a child to redesigning enterprise-wide operations, I've always been driven by a desire to understand systems and make them better.</p>
+                <p>My approach combines strategic vision with hands-on problem solving, creating frameworks that scale impact across organizations.</p>
+                <a href="/subdomains/nicholas/" class="btn primary">Read My Story</a>
+            </div>
+            <div class="featured-image">
+                <img alt="Preview" src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&amp;fit=crop&amp;w=800&amp;q=80">
+            </div>
+        </div>
+    </section>
+
+    <div id="footer"></div>
+
     <script src="/script.js"></script>
     <script>
       fetch('/header.html').then(res => res.text()).then(data => document.getElementById('header').innerHTML = data);
