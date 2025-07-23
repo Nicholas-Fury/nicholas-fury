@@ -3,13 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Professional resume of Nicholas Fury Batson - Senior Technical Program Manager with proven business impact">
     <title>Resume | Nicholas Fury Batson</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
-    <link rel="icon" type="image/png" href="resources/logo.png">
+    <link rel="icon" type="image/png" href="/resources/logo.png">
+    <link rel="manifest" href="/manifest.json">
+    <meta name="theme-color" content="#4361ee">
     <style>
       body { font-family: 'Open Sans', 'Inter', Arial, sans-serif; }
       .page-header { padding-top: 12rem; }
@@ -247,8 +250,8 @@
     <div id="footer"></div>
     <script src="script.js"></script>
     <script>
-      fetch('header.html').then(res => res.text()).then(data => document.getElementById('header').innerHTML = data);
-      fetch('footer.html').then(res => res.text()).then(data => document.getElementById('footer').innerHTML = data);
+      fetch('/header.html').then(res => res.text()).then(data => document.getElementById('header').innerHTML = data);
+      fetch('/footer.html').then(res => res.text()).then(data => document.getElementById('footer').innerHTML = data);
     </script>
 </body>
 </html>

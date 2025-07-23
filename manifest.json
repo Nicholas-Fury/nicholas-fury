@@ -1,0 +1,21 @@
+{
+  "name": "Nicholas Fury Batson Portfolio",
+  "short_name": "NF Batson",
+  "description": "Professional portfolio of Nicholas Fury Batson",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#4361ee",
+  "icons": [
+    {
+      "src": "/resources/logo.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/resources/logo.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
