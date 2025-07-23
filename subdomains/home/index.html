@@ -3,14 +3,28 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Redirecting to Home Page</title>
-    <meta http-equiv="refresh" content="0; URL='/index.html'" />
-    <link rel="canonical" href="https://www.batson.xyz/index.html" />
+    <meta name="description" content="Nicholas Fury Batson - Professional Portfolio">
+    <title>Nicholas Fury Batson</title>
+    <link rel="stylesheet" href="/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/png" href="/resources/logo.png">
+    <link rel="manifest" href="/manifest.json">
+    <meta name="theme-color" content="#4361ee">
+    <style>
+      body { font-family: 'Open Sans', 'Inter', Arial, sans-serif; }
+      .page-header { padding-top: 12rem; }
+    </style>
 </head>
 <body>
-    <p>Redirecting to <a href="/index.html">Nicholas Batson's Home Page</a>...</p>
+    <div id="header"></div>
+    <!-- ...existing index.html content, unchanged except for resource paths... -->
+    <script src="/script.js"></script>
     <script>
-        window.location.href = "/index.html";
+      fetch('/header.html').then(res => res.text()).then(data => document.getElementById('header').innerHTML = data);
+      fetch('/footer.html').then(res => res.text()).then(data => document.getElementById('footer').innerHTML = data);
     </script>
 </body>
 </html>
