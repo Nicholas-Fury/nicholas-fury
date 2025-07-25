@@ -3,9 +3,29 @@ document.addEventListener('DOMContentLoaded', function() {
     function setupMenuToggle() {
         const menuToggle = document.querySelector('.menu-toggle');
         const navLinks = document.querySelector('.nav-links');
+
         if (menuToggle && navLinks) {
             menuToggle.addEventListener('click', function() {
+                const expanded = navLinks.classList.contains('show-nav');
                 navLinks.classList.toggle('show-nav');
+                menuToggle.setAttribute('aria-expanded', !expanded);
+
+                // Trap focus within mobile menu when open
+                if (!expanded) {
+                    const focusableElements = navLinks.querySelectorAll('a[href], button');
+                    if (focusableElements.length > 0) {
+                        setTimeout(() => focusableElements[0].focus(), 100);
+                    }
+                }
+            });
+
+            // Close menu on escape key
+            document.addEventListener('keydown', function(e) {
+                if (e.key === 'Escape' && navLinks.classList.contains('show-nav')) {
+                    navLinks.classList.remove('show-nav');
+                    menuToggle.setAttribute('aria-expanded', 'false');
+                    menuToggle.focus();
+                }
             });
         }
     }

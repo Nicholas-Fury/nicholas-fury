@@ -6,16 +6,32 @@
   "display": "standalone",
   "background_color": "#ffffff",
   "theme_color": "#4361ee",
+  "orientation": "any",
+  "categories": ["portfolio", "professional"],
+  "scope": "/",
+  "lang": "en-US",
+  "dir": "ltr",
+  "prefer_related_applications": false,
+  "screenshots": [
+    {
+      "src": "/resources/featured-image.jpg",
+      "type": "image/jpeg",
+      "sizes": "1280x720",
+      "form_factor": "wide"
+    }
+  ],
   "icons": [
     {
       "src": "/resources/logo.png",
       "sizes": "192x192",
-      "type": "image/png"
+      "type": "image/png",
+      "purpose": "any"
     },
     {
       "src": "/resources/logo.png",
       "sizes": "512x512",
-      "type": "image/png"
+      "type": "image/png",
+      "purpose": "maskable"
     }
   ]
 }
