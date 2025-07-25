@@ -1,0 +1,27 @@
+<!-- responsive-image.html - Template for responsive images -->
+<!-- Usage: include this file via JavaScript and replace data attributes -->
+<picture>
+  <source
+    srcset="/resources/responsive/[filename]-1200.webp 1200w,
+            /resources/responsive/[filename]-800.webp 800w,
+            /resources/responsive/[filename]-400.webp 400w"
+    sizes="(max-width: 600px) 400px,
+           (max-width: 1200px) 800px,
+           1200px"
+    type="image/webp">
+  <source
+    srcset="/resources/responsive/[filename]-1200.jpg 1200w,
+            /resources/responsive/[filename]-800.jpg 800w,
+            /resources/responsive/[filename]-400.jpg 400w"
+    sizes="(max-width: 600px) 400px,
+           (max-width: 1200px) 800px,
+           1200px"
+    type="image/jpeg">
+  <img
+    src="/resources/[original]"
+    alt="[alt]"
+    loading="lazy"
+    width="[width]"
+    height="[height]"
+    class="[class]">
+</picture>

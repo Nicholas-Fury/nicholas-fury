@@ -2,24 +2,28 @@
 
 const CACHE_NAME = 'nicholas-batson-website-v3';
 const urlsToCache = [
-  '/',
-  '/index.html',
-  '/about.html',
-  '/home/',
-  '/home/index.html',
-  '/contact/',
-  '/contact/index.html',
-  '/resume/',
-  '/resume/index.html',
-  '/nicholas/',
-  '/nicholas/index.html',
-  '/styles.css',
-  '/script.js',
-  '/header.html',
-  '/footer.html',
-  '/resources/me.jpeg',
-  '/resources/logo.png',
-  '/resources/featured-image.jpg'
+  "/",
+  "/index.html",
+  "/about.html",
+  "/home/",
+  "/home/index.html",
+  "/contact/",
+  "/contact/index.html",
+  "/resume/",
+  "/resume/index.html",
+  "/nicholas/",
+  "/nicholas/index.html",
+  "/styles.css",
+  "/critical.css",
+  "/script.js",
+  "/components.js",
+  "/responsive-images.js",
+  "/responsive-image.html",
+  "/header.html",
+  "/footer.html",
+  "/resources/me.jpeg",
+  "/resources/logo.png",
+  "/resources/featured-image.jpg"
 ];
 
 // Install service worker

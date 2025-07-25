@@ -1,10 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <!-- Critical CSS for faster rendering -->
+    <link rel="stylesheet" href="/critical.css">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact | Nicholas Fury Batson</title>
-    <link rel="stylesheet" href="/styles.css">
+    <meta name="description" content="Nicholas Fury Batson - Ucontact page showcasing professional information">
+    <meta name="keywords" content="Nicholas Batson, Fury, AI, technical, program, manager, contact, portfolio, professional">
+    <meta name="author" content="Nicholas Fury Batson">
+    <!-- Security headers -->
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://cdnjs.cloudflare.com; style-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data:; connect-src 'self';">
+    <meta http-equiv="X-Content-Type-Options" content="nosniff">
+    <meta http-equiv="X-Frame-Options" content="DENY">
+    <meta http-equiv="X-XSS-Protection" content="1; mode=block">
+    <meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin">
+    <meta http-equiv="Permissions-Policy" content="geolocation=(), microphone=(), camera=()">
+    <meta property="og:title" content="    Contact | Nicholas Fury Batson">
+    <meta property="og:description" content="Ucontact section of Nicholas Fury Batson's professional portfolio">
+    <meta property="og:image" content="/resources/featured-image.jpg">
+    <meta property="og:url" content="https://www.batson.xyz/contact/">
+    <meta property="og:type" content="website">
+    <meta name="twitter:card" content="summary_large_image">
+    <title>    Contact | Nicholas Fury Batson</title>
+    <link rel="stylesheet" href="/styles.css" media="print" onload="this.media='all'">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -15,7 +33,7 @@
       .page-header { padding-top: 12rem; }
     </style>
 </head>
-<body>
+<body class="no-fouc">
     <div id="header"></div>
     <header class="page-header">
         <div class="container">
@@ -87,8 +105,9 @@
     <div id="footer"></div>
     <script src="/script.js"></script>
     <script>
-      fetch('/header.html').then(res => res.text()).then(data => document.getElementById('header').innerHTML = data);
-      fetch('/footer.html').then(res => res.text()).then(data => document.getElementById('footer').innerHTML = data);
     </script>
+    <script src="/components.js"></script>
+    <script>window.addEventListener("load", function() { document.body.classList.add("loaded"); });</script>
+    <script src="/responsive-images.js"></script>
 </body>
 </html>
