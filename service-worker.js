@@ -1,12 +1,18 @@
 // Service worker for offline capabilities and improved performance
 
-const CACHE_NAME = 'nicholas-batson-website-v2';
+const CACHE_NAME = 'nicholas-batson-website-v3';
 const urlsToCache = [
   '/',
   '/index.html',
   '/about.html',
-  '/contact.html',
-  '/resume.html',
+  '/home/',
+  '/home/index.html',
+  '/contact/',
+  '/contact/index.html',
+  '/resume/',
+  '/resume/index.html',
+  '/nicholas/',
+  '/nicholas/index.html',
   '/styles.css',
   '/script.js',
   '/header.html',
