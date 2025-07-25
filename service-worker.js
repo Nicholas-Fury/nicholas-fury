@@ -1,12 +1,18 @@
 // Service worker for offline capabilities and improved performance
 
-const CACHE_NAME = 'nicholas-batson-website-v1';
+const CACHE_NAME = 'nicholas-batson-website-v3';
 const urlsToCache = [
   '/',
   '/index.html',
   '/about.html',
-  '/contact.html',
-  '/resume.html',
+  '/home/',
+  '/home/index.html',
+  '/contact/',
+  '/contact/index.html',
+  '/resume/',
+  '/resume/index.html',
+  '/nicholas/',
+  '/nicholas/index.html',
   '/styles.css',
   '/script.js',
   '/header.html',
@@ -27,33 +33,66 @@ self.addEventListener('install', event => {
   );
 });
 
-// Cache and return requests
+// Cache and return requests with strategy based on file type
 self.addEventListener('fetch', event => {
-  event.respondWith(
-    caches.match(event.request)
-      .then(response => {
-        // Return cached version or fetch from network
-        return response || fetch(event.request)
-          .then(response => {
-            // Check if we received a valid response
-            if(!response || response.status !== 200 || response.type !== 'basic') {
-              return response;
-            }
+  const url = new URL(event.request.url);
 
-            // Clone the response
-            const responseToCache = response.clone();
-
-            // Cache the fetched resource
-            caches.open(CACHE_NAME)
-              .then(cache => {
-                cache.put(event.request, responseToCache);
-              });
-
-            return response;
-          });
-      })
-  );
+  // Apply different strategies based on resource type
+  if (url.pathname.match(/\.(jpg|jpeg|png|gif|svg)$/)) {
+    // Cache-first strategy for images
+    event.respondWith(cacheFirst(event.request));
+  } else if (url.pathname.match(/\.(css|js)$/)) {
+    // Stale-while-revalidate for CSS/JS files
+    event.respondWith(staleWhileRevalidate(event.request));
+  } else {
+    // Network-first for HTML and other files
+    event.respondWith(networkFirst(event.request));
+  }
 });
+
+// Cache-first strategy (good for images)
+function cacheFirst(request) {
+  return caches.match(request)
+    .then(cachedResponse => {
+      return cachedResponse || fetch(request).then(response => {
+        return caches.open(CACHE_NAME).then(cache => {
+          cache.put(request, response.clone());
+          return response;
+        });
+      });
+    });
+}
+
+// Network-first strategy (good for HTML)
+function networkFirst(request) {
+  return fetch(request)
+    .then(response => {
+      // Cache a copy of the response
+      const responseClone = response.clone();
+      caches.open(CACHE_NAME).then(cache => {
+        cache.put(request, responseClone);
+      });
+      return response;
+    })
+    .catch(() => {
+      return caches.match(request);
+    });
+}
+
+// Stale-while-revalidate (good for CSS/JS)
+function staleWhileRevalidate(request) {
+  return caches.match(request).then(cachedResponse => {
+    // Return cached response immediately
+    const fetchPromise = fetch(request).then(response => {
+      // Update the cache
+      caches.open(CACHE_NAME).then(cache => {
+        cache.put(request, response.clone());
+      });
+      return response;
+    });
+    return cachedResponse || fetchPromise;
+  });
+}
 
 // Update service worker
 self.addEventListener('activate', event => {
